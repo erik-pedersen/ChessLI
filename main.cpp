@@ -5,7 +5,7 @@
 #include "Pieces/Empty.hpp"
 #include "Pieces/Pawn.hpp"
 
-static void waitForInput();
+// static void waitForInput();
 static Position getUserSelection();
 static Position getUserMove();
 
