@@ -1,0 +1,2 @@
+Fix while-loop logic in main.cpp main function.
+Improve pawn logic

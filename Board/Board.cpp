@@ -24,26 +24,35 @@ void Board::move(Position from, Position to) {
 	}
 }
 
-// Replace with piece factory
+// maybe replace with piece factory?
 void Board::createPawn(Position p, char team) {
 	board[p.row][p.col] = new Pawn(team);
 }
 
 void Board::show() {
-	for (auto v : board) {
-		for (auto p : v) {
-			if (p->getTeam() == 'W') {
-				std::cout << "\x1b[36m";
-				std::cout << p->print();
+	system("clear");
+	for (int i {7}; i >= 0; i--) {
+		for (int j {0}; j < 8; j++) {
+			if (position.row == i && position.col == j) { // Piece is selected
+				std::cout << "\x1b[32;100m";
+				std::cout << board[i][j]->print();
 				std::cout << "\x1b[0m";
-			} else if (p->getTeam() == 'B') {
+			} else if (board[i][j]->getTeam() == 'W') {
+				std::cout << "\x1b[36m";
+				std::cout << board[i][j]->print();
+				std::cout << "\x1b[0m";
+			} else if (board[i][j]->getTeam() == 'B') {
 				std::cout << "\x1b[31m";
-				std::cout << p->print();
+				std::cout << board[i][j]->print();
 				std::cout << "\x1b[0m";
 			} else {
-				std::cout << p->print();
+				std::cout << board[i][j]->print();
 			}
 		}
 		std::cout << '\n';
 	}
+}
+
+void Board::select(Position p) {
+	position = p;
 }

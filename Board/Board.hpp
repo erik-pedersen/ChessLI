@@ -9,11 +9,13 @@
 class Board {
 	private: 
 		std::vector<std::vector<Piece *>> board;
+		Position position;
 
 	public:
 		Board();
 		void move(Position from, Position to);
-		void createPawn(Position p, char team); // Replace with piece factory
+		void createPawn(Position p, char team); // Replace with piece factory?
+		void select(Position p);
 		void show();
 };
 
