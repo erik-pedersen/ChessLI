@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Pawn.hpp"
 
-Pawn::Pawn(char newTeam) : team {newTeam}, name {'P'} {}
+Pawn::Pawn(char newTeam) : team {newTeam}, name {'P'}, firstMove {true} {}
 
 Pawn::~Pawn() {}
 
@@ -11,6 +11,16 @@ bool Pawn::canMove(Position from, Position to, std::vector<std::vector<Piece *>>
 		if (to.row == from.row + 1 
 				&& to.col == from.col
 				&& board[to.row][to.col]->getName() == '.') {
+			return true;
+		}
+
+		// Move forward twice
+		// TODO: Add blocking logic
+		if (to.row == from.row + 2
+				&& to.col == from.col
+				&& board[to.row][to.col]->getName() == '.'
+				&& firstMove) {
+			firstMove = false;
 			return true;
 		}
 
@@ -26,7 +36,18 @@ bool Pawn::canMove(Position from, Position to, std::vector<std::vector<Piece *>>
 	if (team == 'B') {
 		// Move forward once
 		if (to.row == from.row - 1 
-				&& to.col == from.col) {
+				&& to.col == from.col
+				&& board[to.row][to.col]->getName() == '.') {
+			return true;
+		}
+
+		// Move forward twice
+		// TODO: Add blocking logic
+		if (to.row == from.row - 2
+				&& to.col == from.col
+				&& board[to.row][to.col]->getName() == '.'
+				&& firstMove) {
+			firstMove = false;
 			return true;
 		}
 

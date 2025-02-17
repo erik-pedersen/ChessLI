@@ -6,6 +6,7 @@ class Pawn : public Piece {
 	private:
 		char team;
 		char name;
+		mutable bool firstMove;
 
 	public:
 		Pawn(char newTeam);
