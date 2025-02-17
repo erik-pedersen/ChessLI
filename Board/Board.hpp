@@ -17,6 +17,7 @@ class Board {
 		void createPawn(Position p, char team); // Replace with piece factory?
 		void select(Position p);
 		void show();
+		std::vector<std::vector<Piece *>> getBoard();
 };
 
 #endif

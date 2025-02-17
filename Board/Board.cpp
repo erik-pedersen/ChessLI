@@ -13,8 +13,12 @@ Board::Board() {
 	}
 }
 
+std::vector<std::vector<Piece *>> Board::getBoard() {
+	return board;
+}
+
 void Board::move(Position from, Position to) {
-	if (board[from.row][from.col]->canMove(from, to)) {
+	if (board[from.row][from.col]->canMove(from, to, getBoard())) {
 		std::cout << "Moved piece on (" << from.row << ", " << from.col << ") to (" << to.row << ", " << to.col << ")\n";
 		delete board[to.row][to.col];
 		board[to.row][to.col] = board[from.row][from.col];
@@ -56,3 +60,4 @@ void Board::show() {
 void Board::select(Position p) {
 	position = p;
 }
+

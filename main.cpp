@@ -14,8 +14,8 @@ int main() {
 	Board b;
 
 	for (int i {0}; i < 8; i++) {
-		b.createPawn(Position{1, i}, 'B');
-		b.createPawn(Position{6, i}, 'W');
+		b.createPawn(Position{6, i}, 'B');
+		b.createPawn(Position{1, i}, 'W');
 	}
 
 	// This logic could be made a lot more elegant - handle inputs without relying on 
