@@ -18,6 +18,19 @@ int main() {
 		b.createPawn(Position{1, i}, 'W');
 	}
 
+	b.createRook(Position{0, 0}, 'W');
+	b.createRook(Position{0, 7}, 'W');
+	b.createRook(Position{7, 0}, 'B');
+	b.createRook(Position{7, 7}, 'B');
+	b.createBishop(Position{0, 2}, 'W');
+	b.createBishop(Position{0, 5}, 'W');
+	b.createBishop(Position{7, 2}, 'B');
+	b.createBishop(Position{7, 5}, 'B');
+	b.createKnight(Position{0, 1}, 'W');
+	b.createKnight(Position{0, 6}, 'W');
+	b.createKnight(Position{7, 1}, 'B');
+	b.createKnight(Position{7, 6}, 'B');
+
 	// This logic could be made a lot more elegant - handle inputs without relying on 
 	// arbitrary 'Position' outputs
 	while (true) {

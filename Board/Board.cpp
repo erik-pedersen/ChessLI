@@ -1,5 +1,5 @@
-#include "Board.hpp"
 #include <iostream>
+#include "Board.hpp"
 
 Board::Board() {
 	for (size_t i {0}; i < 8; i++) {
@@ -31,6 +31,19 @@ void Board::move(Position from, Position to) {
 // maybe replace with piece factory?
 void Board::createPawn(Position p, char team) {
 	board[p.row][p.col] = new Pawn(team);
+}
+
+// maybe replace with piece factory?
+void Board::createRook(Position p, char team) {
+	board[p.row][p.col] = new Rook(team);
+}
+
+void Board::createBishop(Position p, char team) {
+	board[p.row][p.col] = new Bishop(team);
+}
+
+void Board::createKnight(Position p, char team) {
+	board[p.row][p.col] = new Knight(team);
 }
 
 void Board::show() {
