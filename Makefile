@@ -4,7 +4,7 @@ default: main.cpp Board/Board.o Pieces/Pieces.o
 Board/Board.o: Board/Board.cpp
 	g++ -c Board/Board.cpp -o Board/Board.o
 
-Pieces/Pieces.o: Pieces/Pawn.cpp Pieces/Empty.cpp
+Pieces/Pieces.o: Pieces/Pawn.cpp Pieces/Empty.cpp Pieces/Bishop.cpp Pieces/Rook.cpp Pieces/Knight.cpp
 	g++ -c Pieces/Pawn.cpp -o Pieces/Pawn.o
 	g++ -c Pieces/Rook.cpp -o Pieces/Rook.o
 	g++ -c Pieces/Bishop.cpp -o Pieces/Bishop.o

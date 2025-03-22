@@ -1,2 +1,3 @@
 Fix while-loop logic in main.cpp main function.
 Improve pawn logic
+Need to path check for rooks/bishop so they do not jump over pieces.
